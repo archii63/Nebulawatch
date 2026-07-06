@@ -30,6 +30,11 @@ jobs:
         with:
           path: book
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
