@@ -3,7 +3,11 @@ name: Deploy mdBook to GitHub Pages
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+        MDBOOK_OUTPUT__HTML__SITE_URL: /handbook/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: book
+
 
 jobs:
   build:
